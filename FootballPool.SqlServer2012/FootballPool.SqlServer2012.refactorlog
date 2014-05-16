@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="4f6dfb8e-daec-4a2c-8041-526c9be43b1c" ChangeDateTime="02/05/2014 02:54:48">
+    <Property Name="ElementName" Value="[dbo].[Games].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Games]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="b79f3c54-b039-46f0-aa11-c1d3746c39e3" ChangeDateTime="02/05/2014 02:57:02">
+    <Property Name="ElementName" Value="[dbo].[Games].[GameId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Games]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1c6279b1-ac15-4ec3-a4fd-36daedbae7f5" ChangeDateTime="02/05/2014 03:18:20">
+    <Property Name="ElementName" Value="[dbo].[Teams].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Teams]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TeamID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3e77ace7-c1b3-4226-aa58-d03ede6d07db" ChangeDateTime="02/05/2014 03:27:55">
+    <Property Name="ElementName" Value="[dbo].[FK_Games_Teams]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Games]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Games_Home_Teams]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="11822199-e8c7-4302-8d5b-cd54f9306ba0" ChangeDateTime="02/25/2014 05:47:10">
+    <Property Name="ElementName" Value="[dbo].[Games].[ID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Games]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e56b09ab-495e-442b-bc4f-1fc5614d3da7" ChangeDateTime="04/17/2014 03:09:02">
+    <Property Name="ElementName" Value="[dbo].[Pools].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Pools]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PoolID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="defbc35e-46a0-4232-86d6-50c7e6a03872" ChangeDateTime="04/30/2014 03:36:47">
+    <Property Name="ElementName" Value="[dbo].[Bets].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Bets]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="BetID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="793a243c-54b8-406d-9dc6-1d3572dd6961" ChangeDateTime="04/30/2014 03:58:15">
+    <Property Name="ElementName" Value="[dbo].[FK_Bets_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Bets]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Bets_Games]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5251b905-27ad-4e78-a985-5b8809593655" ChangeDateTime="04/30/2014 04:01:16">
+    <Property Name="ElementName" Value="[dbo].[SiteUsers].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SiteUsers]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UserID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6fa58b46-68ef-47b8-a726-f588262b3ce3" ChangeDateTime="04/30/2014 04:03:59">
+    <Property Name="ElementName" Value="[dbo].[PoolUsers].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[PoolUsers]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PoolUserID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="14b5e8aa-983e-4f9f-a90e-fabdb4525bf7" ChangeDateTime="04/30/2014 04:11:12">
+    <Property Name="ElementName" Value="[dbo].[PoolUsers].[SIteUserID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[PoolUsers]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SiteUserID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f6593a04-6497-48a7-a939-b423ef9fade4" ChangeDateTime="04/30/2014 04:15:09">
+    <Property Name="ElementName" Value="[dbo].[SiteUsers].[UserID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[SiteUsers]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SiteUserID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1d749e07-6c49-4c6b-b3fb-425e02b2f712" ChangeDateTime="04/30/2014 04:22:39">
+    <Property Name="ElementName" Value="[dbo].[FK_Bets_To]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Bets]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Bets_PoolUsers]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="86e8afd3-eb2c-440b-92ae-1ac19773424f" ChangeDateTime="05/03/2014 15:23:04">
+    <Property Name="ElementName" Value="[dbo].[Bets].[PlacedBy]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Bets]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="PlacedByID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3039db23-8dbd-4ac0-84f5-086209e89aa8" ChangeDateTime="05/03/2014 19:56:57">
+    <Property Name="ElementName" Value="[dbo].[Bets].[TeamToCoverBet]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Bets]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TeamToCoverBetID" />
+  </Operation>
+</Operations>
