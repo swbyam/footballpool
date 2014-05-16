@@ -40,8 +40,8 @@ namespace Lincoln.FootballPool.WebApi.AppStart
             ////Map request objects to domain objects.
             Mapper.CreateMap<GameBaseRequestModel, GameSnapshot>();
             Mapper.CreateMap<PaginatedRequest, PagingInfo>()
-                .ForMember(pagingInfo => pagingInfo.StartItemIndex, expr => expr.Ignore())
-                .ForMember(pagingInfo => pagingInfo.SortInfo, expr => expr.Ignore());
+                .ForMember(pagingInfo => pagingInfo.StartItemIndex, expr => expr.Ignore());
+                //.ForMember(pagingInfo => pagingInfo.SortInfo, expr => expr.Ignore());
                 //.ForMember(pagingInfo => pagingInfo.SortInfo, expr => expr.ResolveUsing<SortDirectionTypeResolver>());
                 
             ////Check that AutoMapper configuration is valid.

@@ -24,14 +24,17 @@ namespace Lincoln.FootballPool.WebApi.TypeMappers
         where TEntity : Entity<TEntityId>, new()
         where TEntityId : struct
     {
+        /// <summary>
+        /// Converts the supplied <paramref name="paginatedRequest"/> instance to an instance of <see cref="PagingInfo"/>.
+        /// </summary>
+        /// <param name="paginatedRequest">Paginated request to convert or map.</param>
+        /// <returns>PagingInfo instance.</returns>
         public PagingInfo GetPagingInfo(PaginatedRequest paginatedRequest)
         {
             if (paginatedRequest == null)
             {
                 throw new ArgumentNullException("paginatedRequest", "paginatedRequest cannot be null.");
             }
-
-            PagingInfo pagingInfo = Mapper.Map<PaginatedRequest, PagingInfo>(paginatedRequest);
 
             ////Get sort direction and convert to SortDirection enum.
             SortDirection sortDirection;
@@ -42,12 +45,18 @@ namespace Lincoln.FootballPool.WebApi.TypeMappers
                 throw new InvalidSortExpressionException(string.Format("{0} is not a valid sort direction.  Please provide one of the supported values: \"asc\" or \"desc\" (case-insensitive).", paginatedRequest.SortDirection));
             }
 
-            ////Map the SortInfo property manually as AutoMapper tends not to support object graph expanding well.
-            pagingInfo.SortInfo = new SortingInfo { SortField = paginatedRequest.SortField, SortDirection = sortDirection };
+            PagingInfo pagingInfo = Mapper.Map<PaginatedRequest, PagingInfo>(paginatedRequest);
 
             return pagingInfo;
         }
 
+        /// <summary>
+        /// Converts the supplied <paramref name="paginatedList"/> instance to an instance of <see cref="PaginatedListDto"/> using the supplied <paramref name="entityMapper"/>.
+        /// </summary>
+        /// <param name="paginatedList">Paginated list to convert.</param>
+        /// <param name="entityMapper">Entity mapper used to convert entities contained in the paginated list to their DTP counterpart.</param>
+        /// <param name="entityUri">Entity URI used to create hyperlinks for the entities per the HATEOAS paradigm.</param>
+        /// <returns>Paginated list DTO.</returns>
         public PaginatedListDto<TEntityDto> GetPaginatedListDto(PaginatedList<TEntity, TEntityId> paginatedList, IEntityTypeMapper<TEntityDto, TEntity, TEntityId> entityMapper, string entityUri)
         {
             if (paginatedList == null)

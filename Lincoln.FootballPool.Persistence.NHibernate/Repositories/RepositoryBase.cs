@@ -146,7 +146,7 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
 
                     transaction.Commit();
 
-                    return new PaginatedList<TEntity, int>(result.Future<TEntity>(), totalCount, pagingInfo.PageNumber, pagingInfo.PageSize, pagingInfo.SortInfo.SortField);
+                    return new PaginatedList<TEntity, int>(result.Future<TEntity>(), totalCount, pagingInfo.PageNumber, pagingInfo.PageSize, pagingInfo.SortField);
                 }
                 catch (HibernateException hExcp)
                 {
@@ -236,7 +236,7 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
 
                     transaction.Commit();
 
-                    return new PaginatedList<TEntity, int>(pagedResultSet, totalCount, pagingInfo.PageNumber, pagingInfo.PageSize, pagingInfo.SortInfo.SortField);
+                    return new PaginatedList<TEntity, int>(pagedResultSet, totalCount, pagingInfo.PageNumber, pagingInfo.PageSize, pagingInfo.SortField);
                 }
                 catch (HibernateException hExcp)
                 {

@@ -93,8 +93,8 @@ namespace Lincoln.FootballPool.WebApi.Test
             Assert.IsNotNull(pagingInfo);
             Assert.AreEqual<int>(1, pagingInfo.PageNumber);
             Assert.AreEqual<int>(10, pagingInfo.PageSize);
-            Assert.AreEqual<string>("UserName", pagingInfo.SortInfo.SortField);
-            Assert.AreEqual(SortDirection.Asc, pagingInfo.SortInfo.SortDirection);
+            Assert.AreEqual<string>("UserName", pagingInfo.SortField);
+            Assert.AreEqual(SortDirection.Asc, pagingInfo.SortDirection);
         }
 
         #endregion

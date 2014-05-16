@@ -106,9 +106,15 @@ namespace Lincoln.FootballPool.Persistence
         }
 
         /// <summary>
-        /// Gets or sets information needed to sort the result set.
+        /// Gets or sets the field name by which the result set is ordered or sorted by.
         /// </summary>
-        public SortingInfo SortInfo { get; set; }
+        /// <remarks>This is an optional field.  To specify that the list is not sorted, set this property to an empty string.</remarks>
+        public string SortField { get; set; }
+
+        /// <summary>
+        /// Gets or sets the direction of the sort.
+        /// </summary>
+        public SortDirection SortDirection { get; set; }
 
         /// <summary>
         /// Gets the number of items per page contained in the paginated list.
