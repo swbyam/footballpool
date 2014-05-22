@@ -199,6 +199,7 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
         /// <summary>
         /// Retrieves entities from the database according to criteria contained in the supplied expression <paramref name="filterCriteria"/> and returns them as a paged result set.
         /// </summary>
+        /// <typeparam name="TSortField">Type of the sort field by which the result set is to be sorted.</typeparam>
         /// <param name="pagingInfo">Paging info containing information needed to create the paged the result set.</param>
         /// <param name="filterCriteria">Expression containing criteria used to filter entities in the database.</param>
         /// <param name="orderBy">Expression containing field by which result set should be sorted.</param>
@@ -225,10 +226,15 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
             {
                 try
                 {
-                    IQueryable<TEntity> query = this.session
-                        .Query<TEntity>()
+                    IQueryable<TEntity> query = pagingInfo.SortDirection == SortDirection.Asc ?
+                        this.session.Query<TEntity>()
                         .OrderBy(orderBy)
+                        .Where(filterCriteria) :
+                        this.session
+                        .Query<TEntity>()
+                        .OrderByDescending(orderBy)
                         .Where(filterCriteria);
+
                     int totalCount = query.Count();
                     IEnumerable<TEntity> pagedResultSet = query
                         .Skip(pagingInfo.StartItemIndex - 1)

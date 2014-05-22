@@ -25,8 +25,20 @@ namespace Lincoln.FootballPool.WebApi.TypeMappers
     {
         #region Methods
 
+        /// <summary>
+        /// Converts the supplied <paramref name="paginatedRequest"/> instance to an instance of <see cref="PagingInfo"/>.
+        /// </summary>
+        /// <param name="paginatedRequest">Paginated request to convert or map.</param>
+        /// <returns>PagingInfo instance.</returns>
         PagingInfo GetPagingInfo(PaginatedRequest paginatedRequest);
 
+        /// <summary>
+        /// Converts the supplied <paramref name="paginatedList"/> instance to an instance of <see cref="PaginatedListDto"/> using the supplied <paramref name="entityMapper"/>.
+        /// </summary>
+        /// <param name="paginatedList">Paginated list to convert.</param>
+        /// <param name="entityMapper">Entity mapper used to convert entities contained in the paginated list to their DTP counterpart.</param>
+        /// <param name="entityUri">Entity URI used to create hyperlinks for the entities per the HATEOAS paradigm.</param>
+        /// <returns>Paginated list DTO.</returns>
         PaginatedListDto<TEntityDto> GetPaginatedListDto(PaginatedList<TEntity, TEntityId> paginatedList, IEntityTypeMapper<TEntityDto, TEntity, TEntityId> entityMapper, string entityUri);
 
         #endregion
