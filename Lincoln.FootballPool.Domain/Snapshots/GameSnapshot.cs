@@ -3,13 +3,14 @@
 //     Copyright (c) Lincoln. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
-namespace Lincoln.FootballPool.Domain.Entities
+namespace Lincoln.FootballPool.Domain.Snapshots
 {
     using System;
 
     /// <summary>
-    /// Snapshot class that contains an abbreviated set of properties for a Game instance.
+    /// Snapshot class that contains an abbreviated set of properties for a <see cref="Game"/> instance.
     /// </summary>
+
     public class GameSnapshot
     {
         #region Properties

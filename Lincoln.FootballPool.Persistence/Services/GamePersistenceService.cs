@@ -9,6 +9,7 @@ namespace Lincoln.FootballPool.Persistence.Services
     using System.Globalization;
 
     using Lincoln.FootballPool.Domain.Entities;
+    using Lincoln.FootballPool.Domain.Snapshots;
     using Lincoln.FootballPool.Domain.Services;
     using Lincoln.FootballPool.Persistence.Repositories;
     using Lincoln.FootballPool.Persistence.Services;
@@ -98,17 +99,12 @@ namespace Lincoln.FootballPool.Persistence.Services
                 return operationResult;
             }
 
-            ////TODO: Check that none of the Team instances are null!!  May be able to use the Load method to retrieve a proxy of the team??  Don't think so because the ID property has to be accesssed which causes a query to be executed against the database.
-
-            ////TODO: See if the below operations can somehow be executed in one round trip to the database using NHibernate futures!!
-
             ////Retrieve the home team from the database based on its unique id to verify that it exists.
             Team homeTeam = this.teamRepository.GetById(gameSnapshot.HomeTeamId);
 
             ////Home team does not exist in the persistence store.
             if (homeTeam == null)
             {
-
                 operationResult.AddBrokenRule(string.Format(CultureInfo.CurrentCulture, "Home team with id {0} does not exist in the persistence store.", gameSnapshot.HomeTeamId));
             }
 
@@ -121,6 +117,7 @@ namespace Lincoln.FootballPool.Persistence.Services
                 operationResult.AddBrokenRule(string.Format(CultureInfo.CurrentCulture, "Visiting team with id {0} does not exist in the persistence store.", gameSnapshot.VisitingTeamId));
             }
 
+            ////TODO: Is this check necessary?  It is already known that the favorite team is part of the game!
             ////Retrieve the favorite team from the database based on its unique id to verify that it exists.
             Team favoriteTeam = this.teamRepository.GetById(gameSnapshot.FavoriteTeamId);
 

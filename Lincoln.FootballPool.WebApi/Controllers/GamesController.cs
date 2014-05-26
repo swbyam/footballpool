@@ -15,6 +15,7 @@ namespace Lincoln.FootballPool.WebApi.Controllers
     using System.Web.Http;
 
     using Lincoln.FootballPool.Domain.Entities;
+    using Lincoln.FootballPool.Domain.Snapshots;
     using Lincoln.FootballPool.Persistence;
     using Lincoln.FootballPool.Persistence.Repositories;
     using Lincoln.FootballPool.Persistence.Services;

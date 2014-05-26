@@ -8,6 +8,7 @@ namespace Lincoln.FootballPool.Persistence.Services
     using System;
 
     using Lincoln.FootballPool.Domain.Entities;
+    using Lincoln.FootballPool.Domain.Snapshots;
 
     public interface IGamePersistenceService
     {

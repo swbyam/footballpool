@@ -39,16 +39,15 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Bet.cs" />
     <Compile Include="Entities\BetBase.cs" />
     <Compile Include="Entities\Entity.cs" />
-    <Compile Include="Entities\GameSnapshot.cs" />
+    <Compile Include="Snapshots\BetSnapshot.cs" />
+    <Compile Include="Snapshots\GameSnapshot.cs" />
     <Compile Include="Entities\SiteUser.cs" />
     <Compile Include="Services\BetEvaluatorService.cs" />
     <Compile Include="Entities\BetResult.cs" />
@@ -58,6 +57,7 @@
     <Compile Include="Services\IBetEvaluatorService.cs" />
     <Compile Include="Entities\PickEmBet.cs" />
     <Compile Include="Entities\PointSpreadBet.cs" />
+    <Compile Include="Services\IBetPlacementService.cs" />
     <Compile Include="Services\IGameService.cs" />
     <Compile Include="Services\PointSpreadBetEvaluationStrategy.cs" />
     <Compile Include="Entities\Pool.cs" />

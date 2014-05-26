@@ -8,6 +8,7 @@ namespace Lincoln.FootballPool.WebApi.TypeMappers
     using System;
 
     using Lincoln.FootballPool.Domain.Entities;
+    using Lincoln.FootballPool.Domain.Snapshots;
     using Lincoln.FootballPool.WebApi.Model.Dtos;
     using Lincoln.FootballPool.WebApi.Model.RequestModels;
 

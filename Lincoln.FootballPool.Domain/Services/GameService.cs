@@ -7,7 +7,7 @@ namespace Lincoln.FootballPool.Domain.Services
 {
     using System;
 
-    using Lincoln.FootballPool.Domain.Entities;
+    using Lincoln.FootballPool.Domain.Snapshots;
 
     public class GameService : IGameService
     {

@@ -35,7 +35,8 @@ namespace Lincoln.FootballPool.Persistence.Repositories
 
 
         PaginatedList<Bet, int> GetBetsForWeek(int weekNumber, int poolId, PagingInfo pagingInfo);
-
+        
         #endregion
     }
 }
+

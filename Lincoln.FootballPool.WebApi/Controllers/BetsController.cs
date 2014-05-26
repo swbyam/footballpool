@@ -16,6 +16,7 @@ namespace Lincoln.FootballPool.WebApi.Controllers
     using Lincoln.FootballPool.Domain.Entities;
     using Lincoln.FootballPool.Persistence;
     using Lincoln.FootballPool.Persistence.Repositories;
+    using Lincoln.FootballPool.WebApi.ActionFilters;
     using Lincoln.FootballPool.WebApi.Model.Dtos;
     using Lincoln.FootballPool.WebApi.Model.RequestModels;
     using Lincoln.FootballPool.WebApi.TypeMappers;
@@ -199,6 +200,22 @@ namespace Lincoln.FootballPool.WebApi.Controllers
             PaginatedListDto<BetDto> paginatedListDto = this.pagingTypeMapper.GetPaginatedListDto(paginatedList, this.betTypeMapper, BetsController.GetBetUri(requestMessage, poolId));
 
             return requestMessage.CreateResponse(HttpStatusCode.OK, paginatedListDto);
+        }
+
+        [EmptyParameterFilterAttribute("gameRequest")]
+        public HttpResponseMessage Post(BetBaseRequestModel betRequest, HttpRequestMessage requestMessage)
+        {
+            if (betRequest == null)
+            {
+                throw new ArgumentNullException("betRequest", "betRequest cannot be null.");
+            }
+
+            if (requestMessage == null)
+            {
+                throw new ArgumentNullException("requestMessage", "requestMessage cannot be null.");
+            }
+
+            return null;
         }
 
         #endregion

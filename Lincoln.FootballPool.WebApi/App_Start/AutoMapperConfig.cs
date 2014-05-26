@@ -10,6 +10,7 @@ namespace Lincoln.FootballPool.WebApi.AppStart
     using AutoMapper;
 
     using Lincoln.FootballPool.Domain.Entities;
+    using Lincoln.FootballPool.Domain.Snapshots;
     using Lincoln.FootballPool.Persistence;
     using Lincoln.FootballPool.WebApi.Model.Dtos;
     using Lincoln.FootballPool.WebApi.Model.RequestModels;

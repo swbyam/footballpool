@@ -11,6 +11,7 @@ namespace Lincoln.FootballPool.WebApi.TypeMappers
     using AutoMapper;
 
     using Lincoln.FootballPool.Domain.Entities;
+    using Lincoln.FootballPool.Domain.Snapshots;
     using Lincoln.FootballPool.WebApi.Model;
     using Lincoln.FootballPool.WebApi.Model.Dtos;
     using Lincoln.FootballPool.WebApi.Model.RequestModels;

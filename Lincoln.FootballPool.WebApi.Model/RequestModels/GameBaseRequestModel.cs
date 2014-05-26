@@ -13,7 +13,7 @@ namespace Lincoln.FootballPool.WebApi.Model.RequestModels
     /// <summary>
     /// Request model class that contains information needed to create new instances of games via web service calls.
     /// </summary>
-    /// <remarks>This class is intended for requests that create new instances of Game objects sent with the POST HTTP verb where the game has not yet been assigned a game ID.</remarks>
+    /// <remarks>This class is intended for requests that create new instances of the <see cref="Game"/> class sent with the POST HTTP verb where the game has not yet been assigned a game ID.</remarks>
     public class GameBaseRequestModel
     {
         #region Properties
