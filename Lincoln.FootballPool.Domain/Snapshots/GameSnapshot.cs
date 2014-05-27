@@ -16,6 +16,11 @@ namespace Lincoln.FootballPool.Domain.Snapshots
         #region Properties
 
         /// <summary>
+        /// Gets or sets the unique id of the game upon which the snapshot is based.
+        /// </summary>
+        public int GameId { get; set; }
+
+        /// <summary>
         /// Gets or sets the unique id of the home team participating in the game.
         /// </summary>
         public int HomeTeamId { get; set; }

@@ -10,6 +10,30 @@ namespace Lincoln.FootballPool.Persistence.Services
     using Lincoln.FootballPool.Domain.Entities;
     using Lincoln.FootballPool.Domain.Snapshots;
 
+    /// <summary>
+    /// Type of team in the context of a game.
+    /// </summary>
+    public enum GameTeamType
+    {
+        /// <summary>
+        /// Team is home team of a game.
+        /// </summary>
+        Home,
+
+        /// <summary>
+        /// Team is visiting team of a game.
+        /// </summary>
+        Visiting,
+
+        /// <summary>
+        /// Team is favorite team of a game.
+        /// </summary>
+        Favorite
+    }
+
+    /// <summary>
+    /// Abstraction for game persistence service that provides persistence-related operations related to games, including creating new games, and updating existing ones.
+    /// </summary>
     public interface IGamePersistenceService
     {
         #region Methods
