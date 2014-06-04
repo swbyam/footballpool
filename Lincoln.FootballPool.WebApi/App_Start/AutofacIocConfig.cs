@@ -13,10 +13,9 @@ namespace Lincoln.FootballPool.WebApi.AppStart
     using Autofac;
     using Autofac.Integration.WebApi;
 
+    using Lincoln.FootballPool.Domain.Persistence.Repositories;
     using Lincoln.FootballPool.Domain.Services;
     using Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories;
-    using Lincoln.FootballPool.Persistence.Repositories;
-    using Lincoln.FootballPool.Persistence.Services;
     using Lincoln.FootballPool.WebApi.TypeMappers;
 
     using NHibernate;
@@ -85,7 +84,7 @@ namespace Lincoln.FootballPool.WebApi.AppStart
             containerBuilder.RegisterType<GameRepository>().As<IGameRepository>().InstancePerApiRequest();
             containerBuilder.RegisterType<TeamRepository>().As<ITeamRepository>().InstancePerApiRequest();
             containerBuilder.RegisterType<BetRepository>().As<IBetRepository>().InstancePerApiRequest();
-            containerBuilder.RegisterType<GamePersistenceService>().As<IGamePersistenceService>().InstancePerApiRequest();
+            //containerBuilder.RegisterType<GamePersistenceService>().As<IGamePersistenceService>().InstancePerApiRequest();
             containerBuilder.RegisterType<GameTypeMapper>().As<IGameTypeMapper>().InstancePerApiRequest();
             containerBuilder.RegisterType<BetTypeMapper>().As<IBetTypeMapper>().InstancePerApiRequest();
             containerBuilder.RegisterGeneric(typeof(PagingTypeMapper<,,>)).As(typeof(IPagingTypeMapper<,,>))

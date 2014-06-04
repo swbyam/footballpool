@@ -9,7 +9,7 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
     using System.Collections.Generic;
 
     using Lincoln.FootballPool.Domain.Entities;
-    using Lincoln.FootballPool.Persistence.Repositories;
+    using Lincoln.FootballPool.Domain.Persistence.Repositories;
 
     using NHibernate;
     using NHibernate.Criterion;

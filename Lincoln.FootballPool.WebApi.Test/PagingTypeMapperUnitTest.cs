@@ -9,7 +9,7 @@ using System;
 using AutoMapper;
 
 using Lincoln.FootballPool.Domain.Entities;
-using Lincoln.FootballPool.Persistence;
+using Lincoln.FootballPool.Domain.Persistence;
 using Lincoln.FootballPool.WebApi.AppStart;
 using Lincoln.FootballPool.WebApi.Model;
 using Lincoln.FootballPool.WebApi.Model.Dtos;

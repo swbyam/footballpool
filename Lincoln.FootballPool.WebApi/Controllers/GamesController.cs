@@ -14,11 +14,11 @@ namespace Lincoln.FootballPool.WebApi.Controllers
     using System.Web.Http.Routing;
     using System.Web.Http;
 
+    using Lincoln.FootballPool.Domain;
     using Lincoln.FootballPool.Domain.Entities;
+    using Lincoln.FootballPool.Domain.Persistence.Repositories;
+    using Lincoln.FootballPool.Domain.Services;
     using Lincoln.FootballPool.Domain.Snapshots;
-    using Lincoln.FootballPool.Persistence;
-    using Lincoln.FootballPool.Persistence.Repositories;
-    using Lincoln.FootballPool.Persistence.Services;
     using Lincoln.FootballPool.WebApi.ActionFilters;
     using Lincoln.FootballPool.WebApi.Model.Dtos;
     using Lincoln.FootballPool.WebApi.Model.RequestModels;
@@ -44,7 +44,7 @@ namespace Lincoln.FootballPool.WebApi.Controllers
         /// <summary>
         /// Services that provides persistence-related operations relevant to games.
         /// </summary>
-        private IGamePersistenceService persistenceService;
+        private IGameService gameService;
 
         #endregion
 
@@ -62,8 +62,8 @@ namespace Lincoln.FootballPool.WebApi.Controllers
         /// </summary>
         /// <param name="gameRepository"> Game repository that is responsible or providing basic CRUD functionality related to games including retrieving, updating, and deleting them from the persistence store.</param>
         /// <param name="gameTypeMapper">Type mapper that maps instances of the Game domain objects to their corresponding DTO type.</param>
-        /// <param name="persistenceService">Services that provides persistence-related operations relevant to games.</param>
-        public GamesController(IGameRepository gameRepository, IGameTypeMapper gameTypeMapper, IGamePersistenceService persistenceService)
+        /// <param name="gameService">Services that provides persistence-related operations relevant to games.</param>
+        public GamesController(IGameRepository gameRepository, IGameTypeMapper gameTypeMapper, IGameService gameService)
         {
             if (gameRepository == null)
             {
@@ -75,14 +75,14 @@ namespace Lincoln.FootballPool.WebApi.Controllers
                 throw new ArgumentNullException("gameTypeMapper", "gameTypeMapper cannot be null.");
             }
 
-            if (persistenceService == null)
+            if (gameService == null)
             {
-                throw new ArgumentNullException("persistenceService", "persistenceService cannot be null.");
+                throw new ArgumentNullException("gameService", "gameService cannot be null.");
             }
 
             this.gameRepository = gameRepository;
             this.gameTypeMapper = gameTypeMapper;
-            this.persistenceService = persistenceService;
+            this.gameService = gameService;
         }
 
         #endregion
@@ -176,7 +176,7 @@ namespace Lincoln.FootballPool.WebApi.Controllers
             GameSnapshot game = this.gameTypeMapper.GetGameSnapshot(gameRequest);
 
             ////Save game in persistence store which generates new game instance in persistence store with new id.
-            PersistenceOperationResult<Game> operationResult = this.persistenceService.SaveGame(game);
+            ServiceOperationResult<Game> operationResult = this.gameService.SaveGame(game);
 
             if (operationResult.OperationResult == OperationResult.Failed)
             {
@@ -218,7 +218,7 @@ namespace Lincoln.FootballPool.WebApi.Controllers
             GameSnapshot game = this.gameTypeMapper.GetGameSnapshot(gameRequest);
 
             ////Update game in the persistence store.
-            PersistenceOperationResult<Game> operationResult = this.persistenceService.UpdateGame(Id, game);
+            ServiceOperationResult<Game> operationResult = this.gameService.UpdateGame(Id, game);
             if (operationResult.OperationResult == OperationResult.Failed)
             {
                 ////TODO: Determine if all of this information should be returned to the caller.  Once approach is finalized, update the POST method accordingly.  Message has to be logged.

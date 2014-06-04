@@ -10,7 +10,8 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
     using System.Globalization;
 
     using Lincoln.FootballPool.Domain.Entities;
-    using Lincoln.FootballPool.Persistence.Repositories;
+    using Lincoln.FootballPool.Domain.Persistence;
+    using Lincoln.FootballPool.Domain.Persistence.Repositories;
 
     using NHibernate;
     using NHibernate.Criterion;
@@ -41,7 +42,7 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
         /// </summary>
         /// <param name="week">Week number for which games are to be returned.</param>
         /// <returns>List of games for the week specified.</returns>
-        /// <exception cref="Lincoln.FootballPool.Persistence.PersistenceException">An error occurred retrieving games from the database.</exception>
+        /// <exception cref="Lincoln.FootballPool.Domain.Persistence.PersistenceException">An error occurred retrieving games from the database.</exception>
         public IEnumerable<Game> GetGames(int week)
         {
             using (ITransaction transaction = this.Session.BeginTransaction())
@@ -108,7 +109,7 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
         ///<param name="team1">First team of the game.</param>
         ///<param name="team1">Second team of the game.</param>
         /// <returns>Game that occurs during the specified week number between the supplied teams.  If game cannot be found, null is returned.</returns>
-        /// <exception cref="Lincoln.FootballPool.Persistence.PersistenceException">An error occurred retrieving the game from the database.</exception>
+        /// <exception cref="Lincoln.FootballPool.Domain.Persistence.PersistenceException">An error occurred retrieving the game from the database.</exception>
         /// <remarks>  This database retrieval operation does not assume which team is the home team and which team is the away team.  It simply returns a game that takes place between the 2 teams for the given week.</remarks>
         public Game GetGame(int weekNumber, Team team1, Team team2)
         {

@@ -11,10 +11,9 @@ namespace Lincoln.FootballPool.WebApi.AppStart
 
     using Lincoln.FootballPool.Domain.Entities;
     using Lincoln.FootballPool.Domain.Snapshots;
-    using Lincoln.FootballPool.Persistence;
+    using Lincoln.FootballPool.Domain.Persistence;
     using Lincoln.FootballPool.WebApi.Model.Dtos;
     using Lincoln.FootballPool.WebApi.Model.RequestModels;
-    //using Lincoln.FootballPool.WebApi.TypeMappers;
 
     /// <summary>
     /// Static class that configures the AutoMapper api and sets up mappings between domain types in the Lincoln.FootballPool.Domain project and their corresponding DTO counterparts.  Mappings are also set up between request objects that are sent as part of web service requests and corresponding domain constructs.
@@ -39,7 +38,8 @@ namespace Lincoln.FootballPool.WebApi.AppStart
                 .ForMember(betDto => betDto.HypermediaLinks, expr => expr.Ignore());
 
             ////Map request objects to domain objects.
-            Mapper.CreateMap<GameBaseRequestModel, GameSnapshot>();
+            Mapper.CreateMap<GameBaseRequestModel, GameSnapshot>()
+                .ForMember(gameSnapshot => gameSnapshot.GameId, expr => expr.Ignore());
             Mapper.CreateMap<PaginatedRequest, PagingInfo>()
                 .ForMember(pagingInfo => pagingInfo.StartItemIndex, expr => expr.Ignore());
                 //.ForMember(pagingInfo => pagingInfo.SortInfo, expr => expr.Ignore());

@@ -8,7 +8,7 @@ namespace Lincoln.FootballPool.WebApi.TypeMappers
     using System;
 
     using Lincoln.FootballPool.Domain.Entities;
-    using Lincoln.FootballPool.Persistence;
+    using Lincoln.FootballPool.Domain.Persistence;
     using Lincoln.FootballPool.WebApi.Model.Dtos;
     using Lincoln.FootballPool.WebApi.Model.RequestModels;
 

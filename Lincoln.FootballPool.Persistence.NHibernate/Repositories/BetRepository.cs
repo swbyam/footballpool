@@ -11,8 +11,9 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
     using System.Linq.Expressions;
 
     using Lincoln.FootballPool.Domain.Entities;
+    using Lincoln.FootballPool.Domain.Persistence;
+    using Lincoln.FootballPool.Domain.Persistence.Repositories;
     using Lincoln.FootballPool.Persistence;
-    using Lincoln.FootballPool.Persistence.Repositories;
 
     using NHibernate;
     using NHibernate.Criterion;
@@ -87,7 +88,7 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
         /// <param name="weekNumber">Week number for which bets were placed.</param>
         /// <param name="poolUserId">Id of the pool user who placed the bets.</param>
         /// <returns>List of bets.</returns>
-        /// <exception cref="Lincoln.FootballPool.Persistence.PersistenceException">An error occurred retrieving bets from the persistence store.</exception>
+        /// <exception cref="Lincoln.FootballPool.Domain.Persistence.PersistenceException">An error occurred retrieving bets from the persistence store.</exception>
         public IEnumerable<Bet> GetBets(int weekNumber, int poolUserId)
         {
             if (weekNumber <= 0)

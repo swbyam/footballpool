@@ -46,6 +46,18 @@
     <Compile Include="Entities\Bet.cs" />
     <Compile Include="Entities\BetBase.cs" />
     <Compile Include="Entities\Entity.cs" />
+    <Compile Include="Persistence\Exceptions\ConcurrencyException.cs" />
+    <Compile Include="Persistence\Exceptions\InvalidSortExpression.cs" />
+    <Compile Include="Persistence\Exceptions\PersistenceException.cs" />
+    <Compile Include="Persistence\PaginatedList.cs" />
+    <Compile Include="Persistence\PagingInfo.cs" />
+    <Compile Include="Persistence\Repositories\IBetRepository.cs" />
+    <Compile Include="Persistence\Repositories\IGameRepository.cs" />
+    <Compile Include="Persistence\Repositories\IPoolRepository.cs" />
+    <Compile Include="Persistence\Repositories\IRepository.cs" />
+    <Compile Include="Persistence\Repositories\ITeamRepository.cs" />
+    <Compile Include="Persistence\SortingInfo.cs" />
+    <Compile Include="ServiceOperationResult.cs" />
     <Compile Include="Snapshots\BetSnapshot.cs" />
     <Compile Include="Snapshots\GameSnapshot.cs" />
     <Compile Include="Entities\SiteUser.cs" />
@@ -70,6 +82,7 @@
       <Link>FootballPool.snk</Link>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

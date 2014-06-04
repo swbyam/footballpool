@@ -11,10 +11,10 @@ namespace Lincoln.FootballPool.WebApi.Filters
     using System.Net.Http;
     using System.Web.Http.Filters;
 
-    using Lincoln.FootballPool.Persistence;
+    using Lincoln.FootballPool.Domain.Persistence;
 
     /// <summary>
-    /// Custom exception filter attribute that handles exceptions of type <see cref="Lincoln.FootballPool.Persistence.PersistenceException"/> by returning an error HTTP response message.
+    /// Custom exception filter attribute that handles exceptions of type <see cref="Lincoln.FootballPool.Domain.Persistence.PersistenceException"/> by returning an error HTTP response message.
     /// </summary>
     /// <remarks>The exception filter attribute provides additional error information to a user including the type name of the entity involved in the exception if one is provided.</remarks>
     public class PersistenceExceptionFilterAttribute : ExceptionFilterAttribute
@@ -22,7 +22,7 @@ namespace Lincoln.FootballPool.WebApi.Filters
         #region Public Methods
 
         /// <summary>
-        /// Overrides the <c>OnException</c> method of the <see cref="ExceptionFilterAttribute"/> base class and contains logic that handles exceptions of type <see cref="Lincoln.FootballPool.Persistence.PersistenceException"/>.
+        /// Overrides the <c>OnException</c> method of the <see cref="ExceptionFilterAttribute"/> base class and contains logic that handles exceptions of type <see cref="Lincoln.FootballPool.Domain.Persistence.PersistenceException"/>.
         /// </summary>
         /// <param name="actionExecutedContext">Action of the HTTP executed context.</param>
         public override void OnException(HttpActionExecutedContext actionExecutedContext)

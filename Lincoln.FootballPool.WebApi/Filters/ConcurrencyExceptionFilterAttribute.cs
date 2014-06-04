@@ -11,10 +11,10 @@ namespace Lincoln.FootballPool.WebApi.Filters
     using System.Net.Http;
     using System.Web.Http.Filters;
 
-    using Lincoln.FootballPool.Persistence;
+    using Lincoln.FootballPool.Domain.Persistence;
 
     /// <summary>
-    /// Custom exception filter attribute that handles exceptions of type <see cref="Lincoln.FootballPool.Persistence.ConcurrencyExceptionFilterAttribute"/> by returning an error HTTP response message.
+    /// Custom exception filter attribute that handles exceptions of type <see cref="Lincoln.FootballPool.Domain.Persistence.ConcurrencyExceptionFilterAttribute"/> by returning an error HTTP response message.
     /// </summary>
     /// <remarks>The exception filter attribute provides additional error information to a user including the type name of the entity involved in the exception if one is provided.</remarks>
     public class ConcurrencyExceptionFilterAttribute : ExceptionFilterAttribute

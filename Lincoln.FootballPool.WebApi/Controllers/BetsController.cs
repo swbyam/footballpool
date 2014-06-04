@@ -14,8 +14,8 @@ namespace Lincoln.FootballPool.WebApi.Controllers
     using System.Web.Http.Routing;
 
     using Lincoln.FootballPool.Domain.Entities;
-    using Lincoln.FootballPool.Persistence;
-    using Lincoln.FootballPool.Persistence.Repositories;
+    using Lincoln.FootballPool.Domain.Persistence;
+    using Lincoln.FootballPool.Domain.Persistence.Repositories;
     using Lincoln.FootballPool.WebApi.ActionFilters;
     using Lincoln.FootballPool.WebApi.Model.Dtos;
     using Lincoln.FootballPool.WebApi.Model.RequestModels;

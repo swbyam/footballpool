@@ -9,7 +9,7 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
     using System.Collections.Generic;
 
     using Lincoln.FootballPool.Domain.Entities;
-    using Lincoln.FootballPool.Persistence.Repositories;
+    using Lincoln.FootballPool.Domain.Persistence.Repositories;
 
     using NHibernate;
     using NHibernate.Criterion;
@@ -40,7 +40,7 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
         /// </summary>
         /// <param name="gameId">Unique id of the pool to retrieve.</param>
         /// <returns>Pool with the specified pool id.</returns>
-        /// <exception cref="Lincoln.FootballPool.Persistence.PersistenceException">An error occurred retrieving the entity from the database.</exception>
+        /// <exception cref="Lincoln.FootballPool.Domain.Persistence.PersistenceException">An error occurred retrieving the entity from the database.</exception>
         //public Pool GetPool(int poolId)
         //{
         //    return base.GetById(poolId);

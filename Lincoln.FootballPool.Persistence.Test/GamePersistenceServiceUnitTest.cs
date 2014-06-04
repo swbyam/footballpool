@@ -8,7 +8,6 @@ namespace Lincoln.FootballPool.Persistence.Test
     using System;
 
     using Lincoln.FootballPool.Domain.Services;
-    using Lincoln.FootballPool.Persistence.Services;
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 

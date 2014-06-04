@@ -9,8 +9,8 @@ namespace Lincoln.FootballPool.Persistence.Services
     using System.Globalization;
 
     using Lincoln.FootballPool.Domain.Entities;
-    using Lincoln.FootballPool.Domain.Snapshots;
     using Lincoln.FootballPool.Domain.Services;
+    using Lincoln.FootballPool.Domain.Snapshots;
     using Lincoln.FootballPool.Persistence.Repositories;
     using Lincoln.FootballPool.Persistence.Services;
 

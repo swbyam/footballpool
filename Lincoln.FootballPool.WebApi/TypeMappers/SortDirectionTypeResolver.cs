@@ -2,7 +2,7 @@
 
 using AutoMapper;
 
-using Lincoln.FootballPool.Persistence;
+using Lincoln.FootballPool.Domain.Persistence;
 using Lincoln.FootballPool.WebApi.Model.RequestModels;
 
 namespace Lincoln.FootballPool.WebApi.TypeMappers

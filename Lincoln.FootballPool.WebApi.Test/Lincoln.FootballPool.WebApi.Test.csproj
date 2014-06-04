@@ -68,10 +68,6 @@
       <Project>{a5d0c94c-0ffe-4646-ac6e-b249eb2fee98}</Project>
       <Name>Lincoln.FootballPool.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Lincoln.FootballPool.Persistence\Lincoln.FootballPool.Persistence.csproj">
-      <Project>{6f108add-35a7-4e51-8061-c17d8ba3633a}</Project>
-      <Name>Lincoln.FootballPool.Persistence</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Lincoln.FootballPool.WebApi.Model\Lincoln.FootballPool.WebApi.Model.csproj">
       <Project>{218b30a4-3824-4e9b-9da9-fd37a0735b8c}</Project>
       <Name>Lincoln.FootballPool.WebApi.Model</Name>

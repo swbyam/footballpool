@@ -12,8 +12,8 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
     using System.Linq.Expressions;
 
     using Lincoln.FootballPool.Domain.Entities;
-    using Lincoln.FootballPool.Persistence;
-    using Lincoln.FootballPool.Persistence.Repositories;
+    using Lincoln.FootballPool.Domain.Persistence;
+    using Lincoln.FootballPool.Domain.Persistence.Repositories;
 
     using NHibernate;
     using NHibernate.Criterion;
@@ -73,7 +73,7 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
         /// </summary>
         /// <param name="gameId">Unique id of the entity to retrieve.</param>
         /// <returns>Entity with the specified id.</returns>
-        /// <exception cref="Lincoln.FootballPool.Persistence.PersistenceException">An error occurred retrieving the entity from the database.</exception>
+        /// <exception cref="Lincoln.FootballPool.Domain.Persistence.PersistenceException">An error occurred retrieving the entity from the database.</exception>
         public TEntity GetById(int id)
         {
             using (ITransaction transaction = this.session.BeginTransaction())
@@ -100,7 +100,7 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
         /// Retrieves all entities from the database.
         /// </summary>
         /// <returns>List of entities.</returns>
-        /// <exception cref="Lincoln.FootballPool.Persistence.PersistenceException">An error occurred retrieving entities from the database.</exception>
+        /// <exception cref="Lincoln.FootballPool.Domain.Persistence.PersistenceException">An error occurred retrieving entities from the database.</exception>
         public IEnumerable<TEntity> GetAll()
         {
             using (ITransaction transaction = this.session.BeginTransaction())
@@ -122,7 +122,7 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
         /// <param name="pageNumber">Page number of the result set to be returned.</param>
         /// <param name="pageSize">Number entities to be returned per page.</param>
         /// <returns>Paginated list of entities.</returns>
-        /// <exception cref="Lincoln.FootballPool.Persistence.PersistenceException">An error occurred retrieving a paginated list of entities from the database.</exception>
+        /// <exception cref="Lincoln.FootballPool.Domain.Persistence.PersistenceException">An error occurred retrieving a paginated list of entities from the database.</exception>
         public PaginatedList<TEntity, int> GetAllAsPaginatedList(PagingInfo pagingInfo)
         {
             if (pagingInfo == null)
@@ -160,8 +160,8 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
         /// </summary>
         /// <param name="entity">Entity to update in the persistence store.</param>
         /// <returns>Entity instance that was saved.</returns>
-        /// <exception cref="Lincoln.FootballPool.Persistence.ConcurrencyException">A concurrency error occurred saving the entity as it was already updated by another transaction.</exception>
-        /// <exception cref="Lincoln.FootballPool.Persistence.PersistenceException">An error occurred saving the entity to the database.</exception>
+        /// <exception cref="Lincoln.FootballPool.Domain.Persistence.ConcurrencyException">A concurrency error occurred saving the entity as it was already updated by another transaction.</exception>
+        /// <exception cref="Lincoln.FootballPool.Domain.Persistence.PersistenceException">An error occurred saving the entity to the database.</exception>
         public TEntity Save(TEntity entity)
         {
             if (entity == null)
@@ -204,7 +204,7 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
         /// <param name="filterCriteria">Expression containing criteria used to filter entities in the database.</param>
         /// <param name="orderBy">Expression containing field by which result set should be sorted.</param>
         /// <returns>Paginated list of entities.</returns>
-        /// <exception cref="Lincoln.FootballPool.Persistence.PersistenceException">An error occurred retrieving a paginated list of entities.</exception>
+        /// <exception cref="Lincoln.FootballPool.Domain.Persistence.PersistenceException">An error occurred retrieving a paginated list of entities.</exception>
         protected PaginatedList<TEntity, int> GetPaginatedList<TSortField>(PagingInfo pagingInfo, Expression<Func<TEntity, bool>> filterCriteria, Expression<Func<TEntity, TSortField>> orderBy)
         {
             if (pagingInfo == null)

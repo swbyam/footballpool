@@ -12,7 +12,7 @@ namespace Lincoln.FootballPool.WebApi.TypeMappers
     using AutoMapper;
 
     using Lincoln.FootballPool.Domain.Entities;
-    using Lincoln.FootballPool.Persistence;
+    using Lincoln.FootballPool.Domain.Persistence;
     using Lincoln.FootballPool.WebApi.Model.Dtos;
     using Lincoln.FootballPool.WebApi.Model.RequestModels;
 

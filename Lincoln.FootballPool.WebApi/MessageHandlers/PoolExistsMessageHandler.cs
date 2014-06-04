@@ -12,7 +12,7 @@ namespace Lincoln.FootballPool.WebApi.MessageHandlers
     using System.Threading.Tasks;
 
     using Lincoln.FootballPool.Domain.Entities;
-    using Lincoln.FootballPool.Persistence.Repositories;
+    using Lincoln.FootballPool.Domain.Persistence.Repositories;
 
     public class PoolExistsMessageHandler : DelegatingHandler
     {
