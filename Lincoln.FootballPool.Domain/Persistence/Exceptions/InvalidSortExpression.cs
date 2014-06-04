@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="ConcurrencyException.cs" company="Optum">
+// <copyright file="InvalidSortExpressionException.cs" company="Optum">
 //     Copyright (c) Optum. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------

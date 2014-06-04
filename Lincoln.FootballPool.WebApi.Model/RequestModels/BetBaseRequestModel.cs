@@ -25,25 +25,25 @@ namespace Lincoln.FootballPool.WebApi.Model.RequestModels
         [Min(1, ErrorMessage = "GameId must be greater than 0.")]
         public int? GameId { get; set; }
 
-        [Required]
-        [Min(1, ErrorMessage = "Amount must be greater than 0.")]
         /// <summary>
         /// Gets or sets the amount placed on the bet.
         /// </summary>
+        [Required]
+        [Min(1, ErrorMessage = "Amount must be greater than 0.")]
         public int? Amount { get; set; }
 
-        [Required]
-        [Min(1, ErrorMessage = "TeamToCoverBetId must be greater than 0.")]
         /// <summary>
         /// Gets or sets the id of the team picked to cover the bet.
         /// </summary>
+        [Required]
+        [Min(1, ErrorMessage = "TeamToCoverBetId must be greater than 0.")]
         public int? TeamToCoverBetId { get; set; }
 
-        [Required]
-        [Min(1, ErrorMessage = "Points must be greater than 0.")]
         /// <summary>
         /// Gets or sets the the number of points taken in the bet for the team picked to win or cover the bet.
         /// </summary>
+        [Required]
+        [Min(1, ErrorMessage = "Points must be greater than 0.")]
         public float? Points { get; set; }
 
         #endregion

@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="RouteConfig.cs" company="Lincoln">
+// <copyright file="WebApiRouteConfig.cs" company="Lincoln">
 //     Copyright (c) Lincoln. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------

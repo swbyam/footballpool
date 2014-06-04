@@ -20,7 +20,7 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.MappingOverrides
         #region Public Methods
 
         /// <summary>
-        /// Overiddes mappings defined in the supplied <paramref name="mapping"/>.
+        /// Overrides mappings defined in the supplied <paramref name="mapping"/>.
         /// </summary>
         /// <param name="mapping">Auto mapping context information for the <see cref="Game"/> entity.</param>
         public void Override(AutoMapping<Game> mapping)

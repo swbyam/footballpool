@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="RepositoryBase.cs" company="Lincoln">
+// <copyright file="Repository.cs" company="Lincoln">
 //     Copyright (c) Lincoln. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------
@@ -39,7 +39,7 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="Repository"/> class.
+        /// Initializes a new instance of the <see cref="Repository{TEntity}"/> class.
         /// </summary>
         /// <param name="session">NHibernate session instance.</param>
         protected Repository(ISession session)
@@ -86,12 +86,11 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
 
                     transaction.Commit();
 
-
                     return entity;
                 }
-                catch (HibernateException hExcp)
+                catch (HibernateException hibernateExcp)
                 {
-                    throw new PersistenceException(string.Format(CultureInfo.CurrentCulture, "An error occurred retrieving an entity with id {0}", id), hExcp);
+                    throw new PersistenceException(string.Format(CultureInfo.CurrentCulture, "An error occurred retrieving an entity with id {0}", id), hibernateExcp);
                 }
             }
         }
@@ -109,9 +108,9 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
                 {
                     return this.session.QueryOver<TEntity>().List<TEntity>();
                 }
-                catch (HibernateException hExcp)
+                catch (HibernateException hibernateExcp)
                 {
-                    throw new PersistenceException("An error occurred retrieving entities from the database.", hExcp);
+                    throw new PersistenceException("An error occurred retrieving entities from the database.", hibernateExcp);
                 }
             }
         }
@@ -137,7 +136,7 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
                 try
                 {
                     IQueryOver<TEntity> rowCount = this.session.QueryOver<TEntity>().ToRowCountQuery();
-                    IQueryOver<TEntity> result = Session.QueryOver<TEntity>()
+                    IQueryOver<TEntity> result = this.Session.QueryOver<TEntity>()
                                                           .OrderBy(entity => entity.Id).Asc
                                                           .Take(pagingInfo.PageSize)
                                                           .Skip(pagingInfo.PageSize);
@@ -148,9 +147,9 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
 
                     return new PaginatedList<TEntity, int>(result.Future<TEntity>(), totalCount, pagingInfo.PageNumber, pagingInfo.PageSize, pagingInfo.SortField);
                 }
-                catch (HibernateException hExcp)
+                catch (HibernateException hibernateExcp)
                 {
-                    throw new PersistenceException("An error occurred retrieving a paginated list of entities", hExcp);
+                    throw new PersistenceException("An error occurred retrieving a paginated list of entities", hibernateExcp);
                 }
             }
         }
@@ -244,9 +243,9 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
 
                     return new PaginatedList<TEntity, int>(pagedResultSet, totalCount, pagingInfo.PageNumber, pagingInfo.PageSize, pagingInfo.SortField);
                 }
-                catch (HibernateException hExcp)
+                catch (HibernateException hibernateExcp)
                 {
-                    throw new PersistenceException("An error occurred retrieving a paginated list of entities.", hExcp);
+                    throw new PersistenceException("An error occurred retrieving a paginated list of entities.", hibernateExcp);
                 }
             }
         }

@@ -24,20 +24,20 @@ namespace Lincoln.FootballPool.WebApi.TypeMappers
         /// <param name="games">List of bets to convert.</param>
         /// <param name="urlHelper">Url helper used to assist in creating DTO's for each of the supplied bets.</param>
         /// <returns>List of bet DTO instances.</returns>
-        //public IEnumerable<BetDto> GetBetDtos(IEnumerable<Bet> bets, UrlHelper urlHelper)
-        //{
-        //    if (bets == null)
-        //    {
-        //        throw new ArgumentNullException("bets", "bets cannot be null.");
-        //    }
+        ////public IEnumerable<BetDto> GetBetDtos(IEnumerable<Bet> bets, UrlHelper urlHelper)
+        ////{
+        ////    if (bets == null)
+        ////    {
+        ////        throw new ArgumentNullException("bets", "bets cannot be null.");
+        ////    }
 
-        //    if (urlHelper == null)
-        //    {
-        //        throw new ArgumentNullException("urlHelper", "urlHelper cannot be null.");
-        //    }
+        ////    if (urlHelper == null)
+        ////    {
+        ////        throw new ArgumentNullException("urlHelper", "urlHelper cannot be null.");
+        ////    }
 
-        //    return bets.Select(bet => this.GetEntityDto(bet, urlHelper.Link("DefaultApi", new { id = bet.Id })));
-        //}
+        ////    return bets.Select(bet => this.GetEntityDto(bet, urlHelper.Link("DefaultApi", new { id = bet.Id })));
+        ////}
 
         #region Protected Methods
 
@@ -87,12 +87,12 @@ namespace Lincoln.FootballPool.WebApi.TypeMappers
                 Href = "api/Teams/" + entity.TeamToCoverBet.Id,
             });
             ////TODO: How can league id be obtained?
-            //betDto.AddHypermediaLinks(new Link
-            //{
-            //    Title = "PlacedByUser",
-            //    Rel = "placedbyuser",
-            //    Href = "api/<league id>/poolusers/<pool user id>"
-            //});
+            ////betDto.AddHypermediaLinks(new Link
+            ////{
+            ////    Title = "PlacedByUser",
+            ////    Rel = "placedbyuser",
+            ////    Href = "api/<league id>/poolusers/<pool user id>"
+            ////});
 
             return hypermediaLinks;
         }

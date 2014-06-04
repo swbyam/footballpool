@@ -40,11 +40,11 @@ namespace Lincoln.FootballPool.Domain.Entities
         #region Public Methods
 
         /// <summary>
-        /// Override of Object.Equals method which determines whether or not the supplied obj has the same team id as the team id of this instance (assuming the supplied object is an instance of <see cref="Team"/>).
+        /// Override of Object.Equals method which determines whether or not the supplied object has the same team id as the team id of this instance (assuming the supplied object is an instance of <see cref="Team"/>).
         /// </summary>
         /// <param name="obj">Object to compare with the current Team instance.</param>
         /// <returns>True if the team id of the objects are the same.  Otherwise, false.</returns>
-        public virtual bool Equals(Object obj)
+        public virtual bool Equals(object obj)
         {
             if (obj == null || !(obj is Team))
             {
@@ -79,6 +79,5 @@ namespace Lincoln.FootballPool.Domain.Entities
         }
 
         #endregion
-
     }
 }

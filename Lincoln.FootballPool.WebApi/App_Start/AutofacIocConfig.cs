@@ -84,7 +84,7 @@ namespace Lincoln.FootballPool.WebApi.AppStart
             containerBuilder.RegisterType<GameRepository>().As<IGameRepository>().InstancePerApiRequest();
             containerBuilder.RegisterType<TeamRepository>().As<ITeamRepository>().InstancePerApiRequest();
             containerBuilder.RegisterType<BetRepository>().As<IBetRepository>().InstancePerApiRequest();
-            //containerBuilder.RegisterType<GamePersistenceService>().As<IGamePersistenceService>().InstancePerApiRequest();
+            ////containerBuilder.RegisterType<GamePersistenceService>().As<IGamePersistenceService>().InstancePerApiRequest();
             containerBuilder.RegisterType<GameTypeMapper>().As<IGameTypeMapper>().InstancePerApiRequest();
             containerBuilder.RegisterType<BetTypeMapper>().As<IBetTypeMapper>().InstancePerApiRequest();
             containerBuilder.RegisterGeneric(typeof(PagingTypeMapper<,,>)).As(typeof(IPagingTypeMapper<,,>))

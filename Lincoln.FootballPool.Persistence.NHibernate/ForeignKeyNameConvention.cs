@@ -6,15 +6,15 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework
     using FluentNHibernate;
     using FluentNHibernate.Conventions;
 
-    //public class ForeignKeyNameConvention : ForeignKeyConvention
-    //{
-    //    #region Public Methods
+    ////public class ForeignKeyNameConvention : ForeignKeyConvention
+    ////{
+    ////    #region Public Methods
 
-    //    //protected override string GetKeyName(Member property, Type type)
-    //    //{
-    //    //    return null;
-    //    //}
+    ////    //protected override string GetKeyName(Member property, Type type)
+    ////    //{
+    ////    //    return null;
+    ////    //}
         
-    //    #endregion
-    //}
+    ////    #endregion
+    ////}
 }

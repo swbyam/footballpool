@@ -1,12 +1,17 @@
-﻿using System;
-
-using AutoMapper;
-
-using Lincoln.FootballPool.Domain.Persistence;
-using Lincoln.FootballPool.WebApi.Model.RequestModels;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="SortDirectionTypeResolver.cs" company="Lincoln">
+//     Copyright (c) Lincoln. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace Lincoln.FootballPool.WebApi.TypeMappers
 {
+    using System;
+
+    using AutoMapper;
+
+    using Lincoln.FootballPool.Domain.Persistence;
+    using Lincoln.FootballPool.WebApi.Model.RequestModels;
+
     public class SortDirectionTypeResolver : ValueResolver<PaginatedRequest, SortDirection>
     {
         #region Protected Methods

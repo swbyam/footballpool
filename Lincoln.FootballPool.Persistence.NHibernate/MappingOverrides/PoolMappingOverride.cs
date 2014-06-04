@@ -18,7 +18,7 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.MappingOverrides
     public class PoolMappingOverride : IAutoMappingOverride<Pool>
     {
         /// <summary>
-        /// Overiddes mappings defined in the supplied <paramref name="mapping"/>.
+        /// Overrides mappings defined in the supplied <paramref name="mapping"/>.
         /// </summary>
         /// <param name="mapping">Auto mapping context information for the <see cref="Pool"/> entity.</param>
         public void Override(AutoMapping<Pool> mapping)
@@ -27,6 +27,5 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.MappingOverrides
 
             mapping.Version(pool => pool.Version).CustomSqlType("Rowversion").Generated.Always().UnsavedValue("null");
         }
-
     }
 }

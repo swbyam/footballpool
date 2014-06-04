@@ -12,6 +12,8 @@
       <Word>dto</Word>
       <Word>rel</Word>
       <Word>href</Word>
+      <Word>linq</Word>
+      <Word>enum</Word>
     </Recognized>
     <Deprecated>
       <Term PreferredAlternate=""></Term>

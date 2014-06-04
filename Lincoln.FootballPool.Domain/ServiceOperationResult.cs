@@ -45,7 +45,7 @@ namespace Lincoln.FootballPool.Domain
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ServiceOperationResult"/> instance.
+        /// Initializes a new instance of the <see cref="ServiceOperationResult{TEntity}"/> instance.
         /// </summary>
         public ServiceOperationResult()
         {
@@ -76,7 +76,7 @@ namespace Lincoln.FootballPool.Domain
         /// <summary>
         /// Gets a read-only collection of the broken rules associated with the execution of the service operation.
         /// </summary>
-        ReadOnlyCollection<string> BrokenRulesRegardingOperation
+        public ReadOnlyCollection<string> BrokenRulesRegardingOperation
         {
             get { return new ReadOnlyCollection<string>(this.brokenRules); }
         }
@@ -126,7 +126,7 @@ namespace Lincoln.FootballPool.Domain
         {
             StringBuilder builder = new StringBuilder();
             
-            foreach(string brokenRule in this.brokenRules)
+            foreach (string brokenRule in this.brokenRules)
             {
                 builder.AppendLine(brokenRule);
             }

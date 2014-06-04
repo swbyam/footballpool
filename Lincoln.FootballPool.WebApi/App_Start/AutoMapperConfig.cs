@@ -10,8 +10,8 @@ namespace Lincoln.FootballPool.WebApi.AppStart
     using AutoMapper;
 
     using Lincoln.FootballPool.Domain.Entities;
-    using Lincoln.FootballPool.Domain.Snapshots;
     using Lincoln.FootballPool.Domain.Persistence;
+    using Lincoln.FootballPool.Domain.Snapshots;
     using Lincoln.FootballPool.WebApi.Model.Dtos;
     using Lincoln.FootballPool.WebApi.Model.RequestModels;
 
@@ -42,8 +42,8 @@ namespace Lincoln.FootballPool.WebApi.AppStart
                 .ForMember(gameSnapshot => gameSnapshot.GameId, expr => expr.Ignore());
             Mapper.CreateMap<PaginatedRequest, PagingInfo>()
                 .ForMember(pagingInfo => pagingInfo.StartItemIndex, expr => expr.Ignore());
-                //.ForMember(pagingInfo => pagingInfo.SortInfo, expr => expr.Ignore());
-                //.ForMember(pagingInfo => pagingInfo.SortInfo, expr => expr.ResolveUsing<SortDirectionTypeResolver>());
+                ////.ForMember(pagingInfo => pagingInfo.SortInfo, expr => expr.Ignore());
+                ////.ForMember(pagingInfo => pagingInfo.SortInfo, expr => expr.ResolveUsing<SortDirectionTypeResolver>());
                 
             ////Check that AutoMapper configuration is valid.
             Mapper.AssertConfigurationIsValid();

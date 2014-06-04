@@ -90,6 +90,5 @@ namespace Lincoln.FootballPool.WebApi.Model.Dtos
         public byte[] Version { get; set; }
 
         #endregion
-
     }
 }

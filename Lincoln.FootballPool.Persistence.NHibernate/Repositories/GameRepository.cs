@@ -57,9 +57,9 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
 
                     return games;
                 }
-                catch (HibernateException hExcp)
+                catch (HibernateException hibernateExcp)
                 {
-                    throw new PersistenceException(string.Format(CultureInfo.CurrentCulture, "An error occurred retrieving games that take place during week {0}", week), hExcp);
+                    throw new PersistenceException(string.Format(CultureInfo.CurrentCulture, "An error occurred retrieving games that take place during week {0}", week), hibernateExcp);
                 }
             }
         }
@@ -95,9 +95,9 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
 
                     return retrievedGame;
                 }
-                catch (HibernateException hExcp)
+                catch (HibernateException hibernateExcp)
                 {
-                    throw new PersistenceException(string.Format(CultureInfo.CurrentCulture, "An error occurred retrieving a game that takes place between teams: {1} and {2}", homeTeam, visitingTeam), hExcp);
+                    throw new PersistenceException(string.Format(CultureInfo.CurrentCulture, "An error occurred retrieving a game that takes place between teams: {1} and {2}", homeTeam, visitingTeam), hibernateExcp);
                 }
             }
         }
@@ -105,9 +105,9 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
         /// <summary>
         /// Retrieves a game that takes place during the supplied week number <paramref name="weekNumber"/> between the two supplied teams: <paramref name="team1"/> and <paramref name="team2"/> from the database.
         /// </summary>
-        ///<param name="weekNumber">Week number of the game.</param>
-        ///<param name="team1">First team of the game.</param>
-        ///<param name="team1">Second team of the game.</param>
+        /// <param name="weekNumber">Week number of the game.</param>
+        /// <param name="team1">First team of the game.</param>
+        /// <param name="team1">Second team of the game.</param>
         /// <returns>Game that occurs during the specified week number between the supplied teams.  If game cannot be found, null is returned.</returns>
         /// <exception cref="Lincoln.FootballPool.Domain.Persistence.PersistenceException">An error occurred retrieving the game from the database.</exception>
         /// <remarks>  This database retrieval operation does not assume which team is the home team and which team is the away team.  It simply returns a game that takes place between the 2 teams for the given week.</remarks>
@@ -135,9 +135,9 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
 
                     return retrievedGame;
                 }
-                catch (HibernateException hExcp)
+                catch (HibernateException hibernateExcp)
                 {
-                    throw new PersistenceException(string.Format(CultureInfo.CurrentCulture, "An error occurred retrieving a game during week {0} that takes place between teams: {1} and {2}", weekNumber, team1, team2), hExcp);
+                    throw new PersistenceException(string.Format(CultureInfo.CurrentCulture, "An error occurred retrieving a game during week {0} that takes place between teams: {1} and {2}", weekNumber, team1, team2), hibernateExcp);
                 }
             }
         }
@@ -154,7 +154,7 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
                 throw new ArgumentNullException("game", "game cannot be null.");
             }
 
-            return base.Save(game);
+            return this.Save(game);
         }
 
         #endregion

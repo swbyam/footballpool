@@ -33,10 +33,8 @@ namespace Lincoln.FootballPool.Domain.Persistence.Repositories
         /// <returns>List of bets.</returns>
         IEnumerable<Bet> GetBets(int weekNumber, int poolUserId);
 
-
         PaginatedList<Bet, int> GetBetsForWeek(int weekNumber, int poolId, PagingInfo pagingInfo);
         
         #endregion
     }
 }
-

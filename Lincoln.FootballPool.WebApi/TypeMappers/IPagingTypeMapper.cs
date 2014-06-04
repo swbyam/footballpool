@@ -1,5 +1,5 @@
 ﻿//-----------------------------------------------------------------------
-// <copyright file="IPagingInfoTypeMapper.cs" company="Lincoln">
+// <copyright file="IPagingTypeMapper.cs" company="Lincoln">
 //     Copyright (c) Lincoln. All rights reserved.
 // </copyright>
 //-----------------------------------------------------------------------

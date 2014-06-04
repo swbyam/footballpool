@@ -1,4 +1,8 @@
-﻿
+﻿//-----------------------------------------------------------------------
+// <copyright file="CustomAutoMappingConfiguration.cs" company="Lincoln">
+//     Copyright (c) Lincoln. All rights reserved.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace Lincoln.FootballPool.Persistence.NHibernateFramework
 {
     using System;
@@ -21,7 +25,7 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework
             }
 
             ////TODO: Come up with better way to do this!
-            return type == typeof(Game) || type == typeof(Team) || type == typeof(Bet) || type == typeof(Pool) || type == typeof(PoolUser); ;
+            return type == typeof(Game) || type == typeof(Team) || type == typeof(Bet) || type == typeof(Pool) || type == typeof(PoolUser);
         }
 
         public override bool IsId(Member member)

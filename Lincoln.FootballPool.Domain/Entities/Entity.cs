@@ -23,7 +23,7 @@ namespace Lincoln.FootballPool.Domain.Entities
         /// <summary>
         /// Gets or sets the version of the entity.
         /// </summary>
-        public virtual Byte[] Version { get; set;}
+        public virtual byte[] Version { get; set; }
 
         #endregion
     }

@@ -21,7 +21,7 @@ namespace Lincoln.FootballPool.Domain.Persistence.Repositories
         /// </summary>
         /// <param name="gameId">Unique id of the pool to retrieve.</param>
         /// <returns>Pool with the specified pool id.</returns>
-        //Pool GetPool(int poolId);
+        ////Pool GetPool(int poolId);
 
         #endregion
     }

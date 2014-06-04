@@ -10,7 +10,6 @@ namespace Lincoln.FootballPool.Domain.Snapshots
     /// <summary>
     /// Snapshot class that contains an abbreviated set of properties for a <see cref="Game"/> instance.
     /// </summary>
-
     public class GameSnapshot
     {
         #region Properties

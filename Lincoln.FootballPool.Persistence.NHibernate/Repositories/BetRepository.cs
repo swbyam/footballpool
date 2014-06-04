@@ -78,7 +78,9 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
                 throw new ArgumentNullException("pagingInfo", "pagingInfo cannot be null.");
             }
 
-            return base.GetPaginatedList(pagingInfo, bet => bet.PlacedBy.Id == poolUserId,
+            return this.GetPaginatedList(
+                pagingInfo, 
+                bet => bet.PlacedBy.Id == poolUserId,
                 bet => bet.PlacedBy.UserName);
         }
 
@@ -103,11 +105,11 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
 
             try
             {
-                return base.GetList(bet => bet.Game.WeekNumber == weekNumber && bet.PlacedBy.Id == poolUserId);
+                return this.GetList(bet => bet.Game.WeekNumber == weekNumber && bet.PlacedBy.Id == poolUserId);
             }
-            catch (HibernateException hExcp)
+            catch (HibernateException hibernateExcp)
             {
-                throw new PersistenceException(string.Format(CultureInfo.CurrentCulture, "An error occurred retrieving bets placed during week {0} by pool user {1}.", weekNumber, poolUserId), hExcp);
+                throw new PersistenceException(string.Format(CultureInfo.CurrentCulture, "An error occurred retrieving bets placed during week {0} by pool user {1}.", weekNumber, poolUserId), hibernateExcp);
             }
         }
 
@@ -145,7 +147,7 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
 
             ////TODO: Not happy with the conditional here based on the type of sort field.  There may be more elegant design somewhere for this!
 
-            return betSortField == BetSortField.Amount ? base.GetPaginatedList(pagingInfo, bet => bet.Game.WeekNumber == weekNumber && bet.PlacedBy.Pool.Id == poolId, bet => bet.Amount) : base.GetPaginatedList(pagingInfo, bet => bet.Game.WeekNumber == weekNumber && bet.PlacedBy.Pool.Id == poolId, BetRepository.GetSortExpression(betSortField));
+            return betSortField == BetSortField.Amount ? this.GetPaginatedList(pagingInfo, bet => bet.Game.WeekNumber == weekNumber && bet.PlacedBy.Pool.Id == poolId, bet => bet.Amount) : this.GetPaginatedList(pagingInfo, bet => bet.Game.WeekNumber == weekNumber && bet.PlacedBy.Pool.Id == poolId, BetRepository.GetSortExpression(betSortField));
         }
 
         #endregion

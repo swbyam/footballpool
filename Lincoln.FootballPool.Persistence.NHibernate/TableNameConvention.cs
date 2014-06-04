@@ -1,21 +1,21 @@
 ﻿
 namespace Lincoln.FootballPool.Persistence.NHibernateFramework
 {
-    //using System;
+    ////using System;
 
-    //using FluentNHibernate.Conventions.Instances;
+    ////using FluentNHibernate.Conventions.Instances;
 
-    //public class TableNameConventionTest : IClassInstance
-    //{
-    //    #region Public Methods
+    ////public class TableNameConventionTest : IClassInstance
+    ////{
+    ////    #region Public Methods
 
-    //    public void Apply(FluentNHibernate.Conventions.Instances.IClassInstance instance)
-    //    {
-    //        string typeName = instance.EntityType.Name;
+    ////    public void Apply(FluentNHibernate.Conventions.Instances.IClassInstance instance)
+    ////    {
+    ////        string typeName = instance.EntityType.Name;
 
-    //        instance.Table(Inflector.Net.Inflector.Pluralize(typeName));
-    //    }
+    ////        instance.Table(Inflector.Net.Inflector.Pluralize(typeName));
+    ////    }
 
-    //    #endregion
-    //}
+    ////    #endregion
+    ////}
 }

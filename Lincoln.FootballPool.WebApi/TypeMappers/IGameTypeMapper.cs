@@ -21,14 +21,6 @@ namespace Lincoln.FootballPool.WebApi.TypeMappers
         #region Methods
 
         /// <summary>
-        /// Maps the supplied list of games <paramref name="games"/> into a list of their <see cref="GameDto"/> counterparts.
-        /// </summary>
-        /// <param name="games">List of games to convert.</param>
-        /// <param name="urlHelper">Url helper used to assist in creating DTO's for each of the supplied games.</param>
-        /// <returns>List of game DTO instances.</returns>
-        //IEnumerable<GameDto> GetGameDtos(IEnumerable<Game> games, UrlHelper urlHelper);
-
-        /// <summary>
         /// Maps the supplied Game Request Model instance <paramref name="gameRequestModel"/> into an instance o the domain model class <see cref="GameSnapshot"/>.
         /// </summary>
         /// <param name="gameRequestModel">Game request model to convert.</param>

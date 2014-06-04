@@ -40,10 +40,10 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
         /// </summary>
         /// <param name="gameId">Unique id of the team to retrieve.</param>
         /// <returns>Team with the specified team id.</returns>
-        //public Team GetTeam(int teamId)
-        //{
-        //    return base.GetById(teamId);
-        //}
+        ////public Team GetTeam(int teamId)
+        ////{
+        ////    return base.GetById(teamId);
+        ////}
 
         #endregion
     }

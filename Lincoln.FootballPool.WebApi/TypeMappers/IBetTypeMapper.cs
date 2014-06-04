@@ -24,7 +24,7 @@ namespace Lincoln.FootballPool.WebApi.TypeMappers
         /// <param name="games">List of bets to convert.</param>
         /// <param name="urlHelper">Url helper used to assist in creating DTO's for each of the supplied bets.</param>
         /// <returns>List of bet DTO instances.</returns>
-        //IEnumerable<GameDto> GetBetDtos(IEnumerable<Bet> bets, UrlHelper urlHelper);
+        ////IEnumerable<GameDto> GetBetDtos(IEnumerable<Bet> bets, UrlHelper urlHelper);
 
         #endregion
     }

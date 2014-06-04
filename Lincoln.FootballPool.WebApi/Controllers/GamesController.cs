@@ -11,8 +11,8 @@ namespace Lincoln.FootballPool.WebApi.Controllers
     using System.Linq;
     using System.Net;
     using System.Net.Http;
-    using System.Web.Http.Routing;
     using System.Web.Http;
+    using System.Web.Http.Routing;
 
     using Lincoln.FootballPool.Domain;
     using Lincoln.FootballPool.Domain.Entities;
@@ -195,14 +195,14 @@ namespace Lincoln.FootballPool.WebApi.Controllers
         }
 
         /// <summary>
-        /// Processes PUT requests that update a game in the persistence store with the suppied game id <paramref name="gameId"/> with information contained in the game request <paramref name="gameRequest"/>.
+        /// Processes PUT requests that update a game in the persistence store with the supplied game id <paramref name="gameId"/> with information contained in the game request <paramref name="gameRequest"/>.
         /// </summary>
         /// <param name="gameId">Unique id of the game that is to be updated.</param>
         /// <param name="gameRequest">Game request instance containing information needed to update the game.</param>
         /// <param name="requestMessage">HTTP request message representing the PUT operation call.</param>
         /// <returns>HTTP response message containing the Game object that was updated, or an error message in case of a failure.</returns>
         [EmptyParameterFilterAttribute("gameRequest")]
-        public HttpResponseMessage Put(int Id, GameBaseRequestModel gameRequest, HttpRequestMessage requestMessage)
+        public HttpResponseMessage Put(int id, GameBaseRequestModel gameRequest, HttpRequestMessage requestMessage)
         {
             if (gameRequest == null)
             {
@@ -218,7 +218,7 @@ namespace Lincoln.FootballPool.WebApi.Controllers
             GameSnapshot game = this.gameTypeMapper.GetGameSnapshot(gameRequest);
 
             ////Update game in the persistence store.
-            ServiceOperationResult<Game> operationResult = this.gameService.UpdateGame(Id, game);
+            ServiceOperationResult<Game> operationResult = this.gameService.UpdateGame(id, game);
             if (operationResult.OperationResult == OperationResult.Failed)
             {
                 ////TODO: Determine if all of this information should be returned to the caller.  Once approach is finalized, update the POST method accordingly.  Message has to be logged.
@@ -226,7 +226,7 @@ namespace Lincoln.FootballPool.WebApi.Controllers
             }
 
             ////Get GameDto instance from updated Game instance.
-            GameDto updatedGameDto =  this.gameTypeMapper.GetEntityDto(operationResult.Entity, GamesController.GetGameUri(requestMessage, operationResult.Entity.Id));
+            GameDto updatedGameDto = this.gameTypeMapper.GetEntityDto(operationResult.Entity, GamesController.GetGameUri(requestMessage, operationResult.Entity.Id));
 
             ////Return HTTP response with status code indicating Game resource was created along with resource itself.
             HttpResponseMessage response = requestMessage.CreateResponse(HttpStatusCode.OK, updatedGameDto);

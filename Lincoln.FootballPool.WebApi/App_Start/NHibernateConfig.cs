@@ -33,7 +33,7 @@ namespace Lincoln.FootballPool.WebApi.AppStart
                 .CurrentSessionContext("web")
                 .Mappings(mappingConfig => mappingConfig.AutoMappings.Add(
                     AutoMap.AssemblyOf<Bet>(new CustomAutoMappingConfiguration())
-                    //.Where(type => type.Namespace == "entity namespace")
+                    ////.Where(type => type.Namespace == "entity namespace")
                     .Conventions.Add(
                     Table.Is(inspector => Inflector.Pluralize(inspector.EntityType.Name)),
                     ForeignKey.Format((member, type) => string.Format("{0}{1}", member.Name, "ID")))

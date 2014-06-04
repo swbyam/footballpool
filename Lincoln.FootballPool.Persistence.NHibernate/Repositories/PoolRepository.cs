@@ -41,12 +41,11 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.Repositories
         /// <param name="gameId">Unique id of the pool to retrieve.</param>
         /// <returns>Pool with the specified pool id.</returns>
         /// <exception cref="Lincoln.FootballPool.Domain.Persistence.PersistenceException">An error occurred retrieving the entity from the database.</exception>
-        //public Pool GetPool(int poolId)
-        //{
-        //    return base.GetById(poolId);
-        //}
+        ////public Pool GetPool(int poolId)
+        ////{
+        ////    return base.GetById(poolId);
+        ////}
 
         #endregion
-       
     }
 }

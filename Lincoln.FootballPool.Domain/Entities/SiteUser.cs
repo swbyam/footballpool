@@ -8,7 +8,7 @@ namespace Lincoln.FootballPool.Domain.Entities
     using System;
 
     /// <summary>
-    /// Class represents user that has registered with the football site.  A site user may have one or more pool users assosciated with it that each belong to a single football pool.
+    /// Class represents user that has registered with the football site.  A site user may have one or more pool users associated with it that each belong to a single football pool.
     /// </summary>
     public class SiteUser : Entity<int>
     {

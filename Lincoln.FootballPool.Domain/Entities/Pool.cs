@@ -17,7 +17,7 @@ namespace Lincoln.FootballPool.Domain.Entities
 
         public Pool()
         {
-            //this.poolUsers = new List<PoolUser>();
+            ////this.poolUsers = new List<PoolUser>();
         }
 
         #endregion
@@ -32,7 +32,7 @@ namespace Lincoln.FootballPool.Domain.Entities
         /// <summary>
         /// Gets or sets a collection of pool users that belong to the pool.
         /// </summary>
-        //public virtual ICollection<PoolUser> PoolUsers { get; set; }
+        ////public virtual ICollection<PoolUser> PoolUsers { get; set; }
 
         #endregion
     }

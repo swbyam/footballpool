@@ -41,7 +41,7 @@ namespace Lincoln.FootballPool.Domain.Persistence
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PaginatedList"/> class.
+        /// Initializes a new instance of the <see cref="PaginatedList{TEntity,TEntityId}"/> class.
         /// </summary>
         /// <param name="items">Items or entities that are to be included in the paginated list.</param>
         /// <param name="totalNumberItems">Total number of items in the persistence store.</param>

@@ -19,9 +19,6 @@ namespace Lincoln.FootballPool.Persistence.NHibernateFramework.MappingOverrides
             ////Do not map the "TeamFullName" property as it derives a value from existing property values and only has a getter defined.
             mapping.IgnoreProperty(team => team.FullName);
 
-            ////Map the "Id" property to a column in the database named "TeamID".
-            //mapping.Map(team => team.Id, "TeamID");
-
             ////Map the "Name" property to a column in the database named "TeamName".
             mapping.Map(team => team.Name, "TeamName");
         }

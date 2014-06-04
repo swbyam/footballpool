@@ -171,7 +171,7 @@ namespace Lincoln.FootballPool.Domain.Services
             if (gameSnapshot.HomeTeamId != gameToUpdate.HomeTeam.Id)
             {
                 ////Check to see if team with new home team id exists in the persistence store.
-                Team newHomeTeam = CheckTeamExistsInPersistenceStore(gameSnapshot.HomeTeamId, gameToUpdate.Id, GameTeamType.Home, operationResult);
+                Team newHomeTeam = this.CheckTeamExistsInPersistenceStore(gameSnapshot.HomeTeamId, gameToUpdate.Id, GameTeamType.Home, operationResult);
 
                 ////If team exists in persistence store, update home team of the game.
                 if (newHomeTeam != null)
@@ -184,7 +184,7 @@ namespace Lincoln.FootballPool.Domain.Services
             if (gameSnapshot.VisitingTeamId != gameToUpdate.VisitingTeam.Id)
             {
                 ////Check to see if team with new visiting team id exists in the persistence store.
-                Team newVisitingTeam = CheckTeamExistsInPersistenceStore(gameSnapshot.VisitingTeamId, gameToUpdate.Id, GameTeamType.Visiting, operationResult);
+                Team newVisitingTeam = this.CheckTeamExistsInPersistenceStore(gameSnapshot.VisitingTeamId, gameToUpdate.Id, GameTeamType.Visiting, operationResult);
 
                 ////If team exists in persistence store, update visiting team of the game.
                 if (newVisitingTeam != null)
@@ -197,7 +197,7 @@ namespace Lincoln.FootballPool.Domain.Services
             if (gameSnapshot.FavoriteTeamId != gameToUpdate.FavoriteTeam.Id)
             {
                 ////Check to see if team with new favorite team id exists in the persistence store.
-                Team newFavoriteTeam = CheckTeamExistsInPersistenceStore(gameSnapshot.FavoriteTeamId, gameToUpdate.Id, GameTeamType.Favorite, operationResult);
+                Team newFavoriteTeam = this.CheckTeamExistsInPersistenceStore(gameSnapshot.FavoriteTeamId, gameToUpdate.Id, GameTeamType.Favorite, operationResult);
 
                 ////If team exists in persistence store, update favorite team of the game.
                 if (newFavoriteTeam != null)
