@@ -25,7 +25,7 @@ namespace Lincoln.FootballPool.WebApi.TypeMappers
         #region Public Methods
 
         /// <summary>
-        /// Maps the supplied Game Request Model instance <paramref name="gameRequestModel"/> into an instance o the domain model class <see cref="GameSnapshot"/>.
+        /// Maps the supplied Game Request Model instance <paramref name="gameRequestModel"/> into an instance of the domain model class <see cref="GameSnapshot"/>.
         /// </summary>
         /// <param name="gameRequestModel">Game request model to convert.</param>
         /// <returns>GameSnapshot domain model instance.</returns>

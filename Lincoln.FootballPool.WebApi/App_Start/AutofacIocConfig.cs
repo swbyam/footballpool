@@ -6,7 +6,6 @@
 namespace Lincoln.FootballPool.WebApi.AppStart
 {
     using System;
-    using System.Collections.Generic;
     using System.Reflection;
     using System.Web.Http;
 
@@ -79,16 +78,16 @@ namespace Lincoln.FootballPool.WebApi.AppStart
             AutofacIocConfig.RegisterNHibernateDependencies(containerBuilder);
 
             ////Register services, repositories, and type mappers.
-            containerBuilder.RegisterType<GameService>().As<IGameService>().InstancePerApiRequest();
-            containerBuilder.RegisterType<PoolRepository>().As<IPoolRepository>().InstancePerApiRequest();
-            containerBuilder.RegisterType<GameRepository>().As<IGameRepository>().InstancePerApiRequest();
-            containerBuilder.RegisterType<TeamRepository>().As<ITeamRepository>().InstancePerApiRequest();
-            containerBuilder.RegisterType<BetRepository>().As<IBetRepository>().InstancePerApiRequest();
+            containerBuilder.RegisterType<GameService>().As<IGameService>().InstancePerRequest();
+            containerBuilder.RegisterType<PoolRepository>().As<IPoolRepository>().InstancePerRequest();
+            containerBuilder.RegisterType<GameRepository>().As<IGameRepository>().InstancePerRequest();
+            containerBuilder.RegisterType<TeamRepository>().As<ITeamRepository>().InstancePerRequest();
+            containerBuilder.RegisterType<BetRepository>().As<IBetRepository>().InstancePerRequest();
             ////containerBuilder.RegisterType<GamePersistenceService>().As<IGamePersistenceService>().InstancePerApiRequest();
-            containerBuilder.RegisterType<GameTypeMapper>().As<IGameTypeMapper>().InstancePerApiRequest();
-            containerBuilder.RegisterType<BetTypeMapper>().As<IBetTypeMapper>().InstancePerApiRequest();
+            containerBuilder.RegisterType<GameTypeMapper>().As<IGameTypeMapper>().InstancePerRequest();
+            containerBuilder.RegisterType<BetTypeMapper>().As<IBetTypeMapper>().InstancePerRequest();
             containerBuilder.RegisterGeneric(typeof(PagingTypeMapper<,,>)).As(typeof(IPagingTypeMapper<,,>))
-                   .InstancePerApiRequest();
+                   .InstancePerRequest();
 
             return containerBuilder.Build();
         }

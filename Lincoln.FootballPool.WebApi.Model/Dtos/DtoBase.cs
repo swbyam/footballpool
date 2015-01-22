@@ -9,6 +9,9 @@ namespace Lincoln.FootballPool.WebApi.Model.Dtos
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
 
+    /// <summary>
+    /// Abstract base class from which all DTO's (Data Transfer Objects) derive.
+    /// </summary>
     public abstract class DtoBase
     {
         #region Member Variables

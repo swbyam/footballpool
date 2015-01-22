@@ -78,4 +78,7 @@
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="FootballPool.SqlServer2012.publish.xml" />
+  </ItemGroup>
 </Project>

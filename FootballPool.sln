@@ -13,13 +13,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lincoln.FootballPool.WebApi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lincoln.FootballPool.WebApi.Model", "Lincoln.FootballPool.WebApi.Model\Lincoln.FootballPool.WebApi.Model.csproj", "{218B30A4-3824-4E9B-9DA9-FD37A0735B8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lincoln.FootballPool.WebApi.Test", "Lincoln.FootballPool.WebApi.Test\Lincoln.FootballPool.WebApi.Test.csproj", "{540D4E76-53C0-4A3F-A8BD-679B5619A0EB}"
-EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "FootballPool.SqlServer2012", "FootballPool.SqlServer2012\FootballPool.SqlServer2012.sqlproj", "{258F3E8A-14A5-4C1A-935C-3D3D8431FAEE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lincoln.FootballPool.Persistence.NHibernate", "Lincoln.FootballPool.Persistence.NHibernate\Lincoln.FootballPool.Persistence.NHibernate.csproj", "{14DD833A-23C7-4686-A089-379E82E49D34}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lincoln.Logging", "Lincoln.Logging\Lincoln.Logging.csproj", "{66853F35-1621-4EA9-BF46-35CCB25F7EBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lincoln.TestUtilities", "Lincoln.TestUtilities\Lincoln.TestUtilities.csproj", "{0C5532EB-74D6-436E-9975-C5842AEAE65E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lincoln.FootballPool.WebApi.Test", "Lincoln.FootballPool.WebApi.Test\Lincoln.FootballPool.WebApi.Test.csproj", "{0B2065EA-0122-4A79-AE98-EB1C140A042A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +49,6 @@ Global
 		{218B30A4-3824-4E9B-9DA9-FD37A0735B8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{218B30A4-3824-4E9B-9DA9-FD37A0735B8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{218B30A4-3824-4E9B-9DA9-FD37A0735B8C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{540D4E76-53C0-4A3F-A8BD-679B5619A0EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{540D4E76-53C0-4A3F-A8BD-679B5619A0EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{540D4E76-53C0-4A3F-A8BD-679B5619A0EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{540D4E76-53C0-4A3F-A8BD-679B5619A0EB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{258F3E8A-14A5-4C1A-935C-3D3D8431FAEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{258F3E8A-14A5-4C1A-935C-3D3D8431FAEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{258F3E8A-14A5-4C1A-935C-3D3D8431FAEE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
@@ -65,6 +63,14 @@ Global
 		{66853F35-1621-4EA9-BF46-35CCB25F7EBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66853F35-1621-4EA9-BF46-35CCB25F7EBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66853F35-1621-4EA9-BF46-35CCB25F7EBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C5532EB-74D6-436E-9975-C5842AEAE65E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C5532EB-74D6-436E-9975-C5842AEAE65E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C5532EB-74D6-436E-9975-C5842AEAE65E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C5532EB-74D6-436E-9975-C5842AEAE65E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B2065EA-0122-4A79-AE98-EB1C140A042A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B2065EA-0122-4A79-AE98-EB1C140A042A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B2065EA-0122-4A79-AE98-EB1C140A042A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B2065EA-0122-4A79-AE98-EB1C140A042A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
